@@ -10,7 +10,11 @@ public class StatsService {
         return salesSum;
     }
 
-    public long avgSales(long[] sales, long salesSum) {
+    public long avgSales(long[] sales) {
+        long salesSum = 0;
+        for (int i = 0; i < 12; i++) {
+            salesSum = salesSum + sales[i];
+        }
         long avgSales;
         avgSales = salesSum / 12;
         return avgSales;
@@ -40,8 +44,14 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int lesserThanAvg(long[] sales, long avgSales) {
+    public int lesserThanAvg(long[] sales) {
         int count = 0;
+        long salesSum = 0;
+        for (int i = 0; i < 12; i++) {
+            salesSum = salesSum + sales[i];
+        }
+        long avgSales;
+        avgSales = salesSum / 12;
         for (int i = 0; i < 12; i++) {
             if (sales[i] < avgSales) {
                 count++;
@@ -50,8 +60,14 @@ public class StatsService {
         return count;
     }
 
-    public int higherThanAvg(long[] sales, long avgSales) {
+    public int higherThanAvg(long[] sales) {
         int count = 0;
+        long salesSum = 0;
+        for (int i = 0; i < 12; i++) {
+            salesSum = salesSum + sales[i];
+        }
+        long avgSales;
+        avgSales = salesSum / 12;
         for (int i = 0; i < 12; i++) {
             if (sales[i] > avgSales) {
                 count++;

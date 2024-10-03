@@ -17,9 +17,8 @@ public class StatsServiceTest {
     @Test
     void ShouldCountAvgCorrectly() {
         StatsService countAvg = new StatsService();
-        long salesSum = 180;
         long expectedAvg = 15;
-        long actual = countAvg.avgSales(sales, salesSum);
+        long actual = countAvg.avgSales(sales);
         Assertions.assertEquals(expectedAvg, actual);
     }
 
@@ -42,18 +41,16 @@ public class StatsServiceTest {
     @Test
     void ShouldFindLesserThanAvgSalesCorrectly() {
         StatsService lesserThanAvg = new StatsService();
-        long avg = 15;
         long expectedCount = 5;
-        long actual = lesserThanAvg.lesserThanAvg(sales, avg);
+        long actual = lesserThanAvg.lesserThanAvg(sales);
         Assertions.assertEquals(expectedCount, actual);
     }
 
     @Test
     void ShouldFindHigherThanAvgSalesCorrectly() {
         StatsService lesserThanAvg = new StatsService();
-        long avg = 15;
         long expectedCount = 5;
-        long actual = lesserThanAvg.lesserThanAvg(sales, avg);
+        long actual = lesserThanAvg.lesserThanAvg(sales);
         Assertions.assertEquals(expectedCount, actual);
     }
 }
